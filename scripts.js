@@ -3,7 +3,7 @@ var character;
 function preload()
 {
     game.load.tilemap("Level", "level.json", null, Phaser.Tilemap.TILED_JSON);
-    game.load.image("Tiles", "images/my map.tmx.png");    
+    game.load.image("Tiles", "tiles-small.png");    
     game.load.spritesheet("Character", "images/My character.png", 92, 92, 24);
 }    
 function create()
@@ -21,3 +21,4 @@ function update()
      if (game.input.keyboard.isDown(Phaser.Keyboard.A))
     character.x = character.x - 1;
 }
+game.camera.y = 600;
