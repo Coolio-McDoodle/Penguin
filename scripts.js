@@ -8,7 +8,7 @@ function preload()
 }    
 function create()
 {
-    var map = game.add.tilemap("Level", 196, 196);
+    var map = game.add.tilemap("Level", 64, 64);
     map.addTilesetImage("Tiles"); 
     var layer = map.createLayer( 0 );
     layer.resizeWorld();   
