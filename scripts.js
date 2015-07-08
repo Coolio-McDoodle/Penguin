@@ -20,10 +20,8 @@ character= game.add.sprite(100, 100, "Character");
 }
 function update()
 {
- if (game.input.keyboard.isDown(Phaser.Keyboard.D))
-        character.x = character.x + 1;
-         if (game.input.keyboard.isDown(Phaser.Keyboard.A))
-        character.x = character.x - 1;
-    }
-
-//
+if (game.input.keyboard.isDown(Phaser.Keyboard.D))
+character.x = character.x + 1;
+ if (game.input.keyboard.isDown(Phaser.Keyboard.A))
+character.x = character.x - 1;
+}
