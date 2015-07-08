@@ -1,31 +1,29 @@
-function writeNewline0(){document.write("<br/>")}
-document.write("Wake up in the morning feeling like P-diddy")
-writeNewline0();
-document.write("<br/>Penguins are cool as long as you don't hit them with rocks")
-writeNewline0();
-function becomeBatman(imageEarl) {
-writeNewline0;
-	document.write("imageEarl"+ imageEarl)
-} 
-becomeBatman("http://i.imgur.com/dUboRcM.png")
-function killtheBatman(ImageEarl) {
-        document.write("<img src=\""+ImageEarl+"\"/>")
-}
-writeNewline0;		
-killtheBatman("http://i.imgur.com/dUboRcM.png");
-var numberA = 39;
-var numberB = 26;
-writeNewline0;
-document.write("The total is: " + (numberA + numberB)); 
-var currentTotal = 0;
-function runningTotal(numberToAdd)
+var game = new Phaser.Game(800, 600, Phaser.AUTO, "my-game", { preload: preload, create: create, update: update });
+var character;
+function preload()
 {
-    var currentTotal = 0;
-    currentTotal = currentTotal + numberToAdd;
-    document.write("The current total is: " + currentTotal);
+game.load.tilemap("Level", "level.json", null, Phaser.Tilemap.TILED_JSON);
+game.load.image("TILE_IMAGE_NAME", "images/my map.tmx.png");    
 }
-runningTotal(12);
-runningTotal(448);
-runningTotal(90);
-runningTotal(1253);
-runningTotal(4658)
+{
+game.load.spritesheet("Character", "images/My character.png", 92, 92, 24);
+}
+function create()
+{
+var map = game.add.tilemap("Level", 196, 196);
+map.addTilesetImage("map.tmx.png"); 
+var layer = map.createLayer( 0 );
+layer.resizeWorld();   
+}
+{
+character= game.add.sprite(100, 100, "Character");  
+}
+function update()
+{
+ if (game.input.keyboard.isDown(Phaser.Keyboard.D))
+        character.x = character.x + 1;
+         if (game.input.keyboard.isDown(Phaser.Keyboard.A))
+        character.x = character.x - 1;
+    }
+
+//
