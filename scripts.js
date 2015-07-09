@@ -30,13 +30,14 @@ function update()
     character.body.gravity.y = 300;
         character.body.velocity.x = 0;
     if (game.input.keyboard.isDown(Phaser.Keyboard.D))
-   character.body.velocity.x = 2 * 60;
+   character.body.velocity.x = 3 * 60;
      if (game.input.keyboard.isDown(Phaser.Keyboard.A))
-    character.x = character.x - 2;
+    character.x = character.x - 3;
      if (game.input.keyboard.isDown(Phaser.Keyboard.W))
     {
         if (character.body.onFloor())
         {
             character.body.velocity.y = -200;
         }
+}
 }
