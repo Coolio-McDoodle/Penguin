@@ -22,7 +22,7 @@ function create()
     character.body.setSize(32, 58, 4, -4);
     character.animations.add("idle", [7]);
     character.animations.play("idle")[7];     
-    character.animations.add("walk", [7,4,11,3,10,3,11,4,7,4,9,10,9,4,7],25, true);   
+    character.animations.add("walk", [7,3,4,8,9,10,11,15],25, true);   
     character.anchor.x = 0.5;
     character.anchor.y = 1;
     game.camera.follow(character);
