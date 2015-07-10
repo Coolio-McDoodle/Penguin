@@ -4,6 +4,7 @@ var layer;
  
 function preload()
 {
+    game.stage.backgroundColor = "#4983FF";
     game.load.tilemap("Level", "level.json", null, Phaser.Tilemap.TILED_JSON);
     game.load.image("Tiles", "images/tiles-small.png"); 
     game.load.spritesheet("Character", "images/My character.png", 96, 96, 24);
@@ -32,13 +33,13 @@ function update()
 {
     var isKeyPressed = false
     game.physics.arcade.collide(character, layer);
-    character.body.gravity.y = 300;
+    character.body.gravity.y = 600;
     character.body.velocity.x = 0;
  
     if (game.input.keyboard.isDown(Phaser.Keyboard.D))
     {
         isKeyPressed = true
-        character.body.velocity.x = 3 * 60;
+        character.body.velocity.x = 3.5 * 60;
         character.animations.play("walk");
         character.scale.set(1, 1);
     }
@@ -46,7 +47,7 @@ function update()
     if (game.input.keyboard.isDown(Phaser.Keyboard.A))
        {
         isKeyPressed = true
-        character.body.velocity.x = -3 * 60;
+        character.body.velocity.x = -3.5 * 60;
         character.animations.play("walk");
         character.scale.set(-1, 1);
     }
@@ -54,12 +55,24 @@ function update()
     {
         if (character.body.onFloor())
         {
-            character.body.velocity.y = -200;
+            character.body.velocity.y = -420;
         }
     }
     
     if (isKeyPressed == false)
     {
         character.animations.play("idle");
+    }
+       if (character.y> 6400)
+    }                  
+function restartLevel ()
+{
+    if (character.y> 6400)
+    {
+        restartLevel()
+    } 
+    {
+        (character.x (4*64))
+        (character.y (12*64))    
     }
 }
