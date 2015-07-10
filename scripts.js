@@ -6,7 +6,7 @@ function preload()
 {
     game.load.tilemap("Level", "level.json", null, Phaser.Tilemap.TILED_JSON);
     game.load.image("Tiles", "images/tiles-small.png"); 
-    game.load.spritesheet("Character", "images/My character.png", 96, 96, 24);
+    game.load.spritesheet("Character", "images/My character.png", 92, 92, 24);
 }  
  
 function create()
