@@ -60,20 +60,18 @@ function update()
     }
     
     if (isKeyPressed == false)
-    
     {
         character.animations.play("idle");
-       if (character.y> 6400)
     }
-}                 
-function restartLevel ()
-{
+ 
     if (character.y> 6400)
     {
-        restartLevel()
+        restartLevel();
     } 
-    {
-        (character.x (4*64))
-        (character.y (12*64))    
-    }
+}                  
+ 
+function restartLevel()
+{
+    character.x = 5*64;
+    character.y = 13*64;
 }
