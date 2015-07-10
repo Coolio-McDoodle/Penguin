@@ -6,7 +6,7 @@ function preload()
 {
     game.load.tilemap("Level", "level.json", null, Phaser.Tilemap.TILED_JSON);
     game.load.image("Tiles", "images/tiles-small.png"); 
-    game.load.spritesheet("Character", "images/My character.png", 92, 92, 24);
+    game.load.spritesheet("Character", "images/My character.png", 96, 96, 24);
 }  
  
 function create()
@@ -19,10 +19,10 @@ function create()
     layer.resizeWorld();   
     character = game.add.sprite(4*64, 12*64 + 6, "Character");
     game.physics.enable(character);
-    character.body.setSize(32, 58, 4, -8);
-    character.animations.add("idle", [5]);
-    character.animations.play("idle")[5];     
-    character.animations.add("walk", [5,7,6,10,11,10,6,7,,8,9,8,7,5],20, true);   
+    character.body.setSize(32, 58, 4, -4);
+    character.animations.add("idle", [7]);
+    character.animations.play("idle")[7];     
+    character.animations.add("walk", [7,4,11,3,10,3,11,4,7,4,9,10,9,4,7],25, true);   
     character.anchor.x = 0.5;
     character.anchor.y = 1;
     game.camera.follow(character);
